@@ -1,0 +1,33 @@
+﻿@using Service.DTOs;
+@{
+    ViewData["Title"] = "User Create";
+}
+@model UserForCreationDto
+<h1>Create User</h1>
+<div>
+    <form asp-controller="Users" asp-action="Create" method="post">
+        <div class="mb-3">
+            <label>FirstName</label>
+            <input type="text" class="form-control form-control-sm" asp-for="FirstName" />
+        </div>
+        <div class="mb-3">
+            <label>LastName</label>
+            <input type="text" class="form-control form-control-sm" asp-for="LastName" />
+        </div>
+        <div class="mb-3">
+            <label>BirthOfDate</label>
+            <input type="text" class="form-control form-control-sm" asp-for="BirthOfDate" />
+        </div>
+        <div class="mb-3">
+            <label>Email</label>
+            <input type="text" class="form-control form-control-sm" asp-for="Email" />
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="text" class = "form-control form-control-sm" asp-for="Password" />
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a asp-action="Index" class="btn btn-danger">Back</a>
+    </form>
+</div>
+

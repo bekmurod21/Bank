@@ -1,0 +1,39 @@
+﻿@using Service.DTOs;
+@{
+    ViewData["Title"] = "Users";
+}
+@model IEnumerable<UserForResultDto>
+<div class="mt-10">
+     <a asp-controller="Users" asp-action="result" class="btn btn-danger">Create</a>
+</div>
+<h1>Users</h1>
+<div>
+    <table class="table table-hover">
+        <thread>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">BirthOfDate</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thread>
+        <tbody>
+            @foreach(var item in Model)
+            {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.BirthOfDate</td>
+                <td>@item.Email</td>
+                <td>
+                    <a href="@Url.Action("Edit","Users")" class="btn btn-primary">Edit</a>
+                    <a class="btn btn-warning" href="@Url.Action("Delete","Users", new {id = item.Id})">Delete</a>
+                </td>
+            </tr>
+                
+            }
+        </tbody>
+    </table>
+</div>
